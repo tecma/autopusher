@@ -8,15 +8,21 @@ FILES_PATH = EXEC_PATH+'/pusherfiles/'
 
 
 def file_toucher(): # создаём случайные файлы
+    
+    if (os.path.exists(FILES_PATH)):
+        file_id = (str(uuid.uuid4()).upper()[0:6]) # создаём уникальный id
 
-    file_id = (str(uuid.uuid4()).upper()[0:6]) # создаём уникальный id
+        touch = open(FILES_PATH+file_id,"w") # создаём файл с этим ид
+        touch.write(str(file_id)) # записываем в него id 
+        touch.close()
 
-    touch = open(FILES_PATH+file_id,"w") # создаём файл с этим ид
-    touch.write(str(file_id)) # записываем в него id 
-    touch.close()
+        print('Создан случайный файл с ID: '+file_id)
+        pass
+ 
+    else:
+       os.mkdir(FILES_PATH)
+       file_toucher()
 
-    print('Создан случайный файл с ID: '+file_id)
-    pass
 
 
 def git_pusher():
