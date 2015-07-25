@@ -20,16 +20,16 @@ def file_toucher(): # создаём случайные файлы
         pass
  
     else:
-       print ('нету папки для рандомных файлов') 
+       print ('Отсутствует папка для рандомных файлов') 
        os.mkdir(FILES_PATH)
-       print('создана папка pusherfiles')
+       print('Создана папка pusherfiles')
        file_toucher()
 
 
 
 def git_pusher():
     os.chdir(FILES_PATH)
-    if (len(FILES_PATH) >= 5):
+    if (len(FILES_PATH) >= 10):
         call (['git', 'add', '*'])
         time.sleep(1)
         call (['git', 'commit', '-a', '--allow-empty-message', '-m', ' ', '-q' ])
@@ -37,7 +37,7 @@ def git_pusher():
         call (['git', 'push', '-q'])
         time.sleep(2.5)
     else:
-        print ('Надо набрать 5 файлов')
+        print ('Надо набрать хотя бы 5 файлов')
 
 
 def proc(file_count):
@@ -51,7 +51,7 @@ def proc(file_count):
             # print (file_count)
 
             if file_count == 5:
-                print('Создано ' + str(file_count) + ' случайных файла.')
+                print('Создано ' + str(file_count) + ' случайных файлов.')
                 break  
 
 proc(0)
