@@ -20,7 +20,9 @@ def file_toucher(): # создаём случайные файлы
         pass
  
     else:
+       print ('нету папки для рандомных файлов') 
        os.mkdir(FILES_PATH)
+       print('создана папка pusherfiles')
        file_toucher()
 
 
