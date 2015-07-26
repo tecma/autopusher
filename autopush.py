@@ -27,6 +27,7 @@ def file_toucher(): # создаём случайные файлы
 
 
 
+# срабатывает вне зависимости от кол-ва файлов(!!!!!!)
 def git_pusher():
     os.chdir(FILES_PATH)
     if (len(FILES_PATH) >= 10):
@@ -37,7 +38,7 @@ def git_pusher():
         call (['git', 'push', '-q'])
         time.sleep(2.5)
     else:
-        print ('Надо набрать хотя бы 5 файлов')
+        print ('Надо набрать хотя бы 10 файлов')
 
 
 def proc(file_count):
