@@ -33,9 +33,9 @@ def git_pusher():
     if (len(FILES_PATH) >= 10):
         call (['git', 'add', '*'])
         time.sleep(1)
-        call (['git', 'commit', '-a', '--allow-empty-message', '-m', ' ', '-q' ])
+        call (['git', 'commit', '-a', '--allow-empty-message', '-m', ' '])
         time.sleep(1)
-        call (['git', 'push', '-q'])
+        call (['git', 'push'])
         time.sleep(2.5)
     else:
         print ('Надо набрать хотя бы 10 файлов')
